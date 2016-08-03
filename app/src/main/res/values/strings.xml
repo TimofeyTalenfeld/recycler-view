@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">Yamblz</string>
     <string name="content">Hello</string>
+    <string name="settings">Настройки</string>
+    <string name="change_column_span">Количество колонок</string>
+    <string name="style">Стиль</string>
+    <string name="column_number">Количество колонок</string>
 </resources>
