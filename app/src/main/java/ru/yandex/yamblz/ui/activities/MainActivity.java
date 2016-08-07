@@ -66,4 +66,13 @@ public class MainActivity extends BaseActivity implements SettingsDialog.Setting
             ((ContentFragment) fragment).updateColumnSpan(columnSpan);
         }
     }
+
+    @Override
+    public void onChangeDecorationColor(int color) {
+        Fragment fragment = (getSupportFragmentManager().findFragmentByTag(ContentFragment.class.getCanonicalName()));
+        if(fragment != null) {
+            ((ContentFragment) fragment).updateDecorationColors(color);
+        }
+    }
+
 }

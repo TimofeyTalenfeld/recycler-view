@@ -6,7 +6,14 @@ import android.support.v4.app.DialogFragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CompoundButton;
 import android.widget.NumberPicker;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
+
+import java.lang.reflect.Field;
+import java.util.ArrayList;
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -18,9 +25,10 @@ import ru.yandex.yamblz.R;
 /**
  * Created by root on 8/2/16.
  */
-public class SettingsDialog extends DialogFragment implements NumberPicker.OnValueChangeListener {
+public class SettingsDialog extends DialogFragment implements NumberPicker.OnValueChangeListener, RadioGroup.OnCheckedChangeListener {
 
     @BindView(R.id.column_picker) NumberPicker columnPicker;
+    @BindView(R.id.colors_group) RadioGroup colors;
 
     @State int columnSpan = 1;
 
@@ -48,6 +56,8 @@ public class SettingsDialog extends DialogFragment implements NumberPicker.OnVal
         getDialog().setTitle(getResources().getString(R.string.settings));
 
         initPicker();
+
+        colors.setOnCheckedChangeListener(this);
 
         if(!(getActivity() instanceof SettingsListener)) {
             throw new IllegalStateException("Host activity must implement SettingsListener interface");
@@ -87,8 +97,14 @@ public class SettingsDialog extends DialogFragment implements NumberPicker.OnVal
         ((SettingsListener) getActivity()).onChangeColumnNumber(columnSpan);
     }
 
+    @Override
+    public void onCheckedChanged(RadioGroup group, int checkedId) {
+        ((SettingsListener) getActivity()).onChangeDecorationColor(((RadioButton)group.findViewById(checkedId)).getShadowColor());
+    }
+
     public interface SettingsListener {
         void onChangeColumnNumber(int columnSpan);
+        void onChangeDecorationColor(int color);
     }
 
 }

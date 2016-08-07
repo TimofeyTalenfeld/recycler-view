@@ -5,4 +5,5 @@
     <string name="change_column_span">Количество колонок</string>
     <string name="style">Стиль</string>
     <string name="column_number">Количество колонок</string>
+    <string name="decoration_color">Цвета для декорации</string>
 </resources>

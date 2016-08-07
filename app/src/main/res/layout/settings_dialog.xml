@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:paddingLeft="16dp"
     android:paddingRight="16dp"
@@ -22,5 +24,81 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"></NumberPicker>
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/decoration_color"
+        style="@style/subtitle"/>
+
+    <HorizontalScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <RadioGroup
+            android:checkedButton="@+id/transparent"
+            android:orientation="horizontal"
+            android:id="@+id/colors_group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <RadioButton
+                android:id="@+id/transparent"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:buttonTint="@android:color/darker_gray"
+                android:shadowColor="@android:color/transparent"/>
+
+            <RadioButton
+                android:id="@+id/red"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:buttonTint="@android:color/holo_red_dark"
+                android:shadowColor="@android:color/holo_red_dark"/>
+
+            <RadioButton
+                android:id="@+id/blue"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:buttonTint="@android:color/holo_blue_dark"
+                android:shadowColor="@android:color/holo_blue_dark"/>
+
+            <RadioButton
+                android:id="@+id/green"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:buttonTint="@android:color/holo_green_dark"
+                android:shadowColor="@android:color/holo_green_dark"/>
+
+            <RadioButton
+                android:id="@+id/orange"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:buttonTint="@android:color/holo_orange_dark"
+                android:shadowColor="@android:color/holo_orange_dark"/>
+
+            <RadioButton
+                android:id="@+id/yellow"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:buttonTint="@android:color/holo_orange_light"
+                android:shadowColor="@android:color/holo_orange_light"/>
+
+            <RadioButton
+                android:id="@+id/purple"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:buttonTint="@android:color/holo_purple"
+                android:shadowColor="@android:color/holo_purple"/>
+
+            <RadioButton
+                android:id="@+id/black"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:buttonTint="@android:color/black"
+                android:shadowColor="@android:color/black"/>
+
+        </RadioGroup>
+
+    </HorizontalScrollView>
 
 </LinearLayout>
